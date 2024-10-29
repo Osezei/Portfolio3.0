@@ -6,28 +6,28 @@ import { menuSlide } from "../Animation/Anim";
 import Typo from "../Typography";
 import LinkIndex from "../Link";
 
-const navItems = [
+export const navItems = [
   {
     title: "Home",
-    href: "/",
+    href: "#home",
   },
   {
     title: "Work",
-    href: "/work",
+    href: "#work",
   },
   {
     title: "About",
-    href: "/about",
+    href: "#about",
   },
   {
     title: "Contact",
-    href: "/contact",
+    href: "#contact",
   },
 ];
 
-const Nav = () => {
-  const pathname = usePathname();
-  const [selectedIndicator, setSelectedIndicator] = useState(pathname);
+const Nav = ({ isActive, setIsActive }: any) => {
+  // const pathname = usePathname();
+  // const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
   return (
     <motion.div
@@ -38,18 +38,21 @@ const Nav = () => {
     >
       <div>
         <div
-          onMouseLeave={() => {
-            setSelectedIndicator(pathname);
-          }}
-          className="flex flex-col bg-white h-screen pl-[2%] justify-center gap-5 md:gap-10"
+          // onMouseLeave={() => {
+          //   setSelectedIndicator(pathname);
+          // }}
+          className="flex flex-col bg-black h-screen text-red-50 items-center justify-center gap-5 md:gap-10"
         >
           {navItems.map((data, index) => {
             return (
               <LinkIndex
                 key={index}
                 data={{ ...data, index }}
-                isActive={selectedIndicator == data.href}
-                setSelectedIndicator={setSelectedIndicator}
+                onClick={() => {
+                  setIsActive(!isActive);
+                }}
+                // isActive={selectedIndicator == data.href}
+                // setSelectedIndicator={setSelectedIndicator}
               />
             );
           })}

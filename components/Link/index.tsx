@@ -1,21 +1,21 @@
 import styles from "./style.module.scss";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { scale, slide } from "../Animation/Anim";
 
 export default function LinkIndex({
   data,
   isActive,
-  setSelectedIndicator,
-}: any) {
+  setIsActive,
+}: //setSelectedIndicator,
+any) {
   const { title, href, index } = data;
 
   return (
     <motion.div
-      //   className={styles.link}
-      onMouseEnter={() => {
-        setSelectedIndicator(href);
-      }}
+      // onMouseEnter={() => {
+      //   setSelectedIndicator(href);
+      // }}
       custom={index}
       variants={slide}
       initial="initial"
@@ -24,10 +24,18 @@ export default function LinkIndex({
     >
       <motion.div
         variants={scale}
-        animate={isActive ? "open" : "closed"}
-        // className={styles.indicator}
+        animate={!isActive ? "open" : "closed"}
       ></motion.div>
-      <Link href={href}>{title}</Link>
+      <Link
+        to={href}
+        smooth={true}
+        duration={500}
+        // onClick={() => {
+        //   setIsActive(!isActive);
+        // }}
+      >
+        {title}
+      </Link>
     </motion.div>
   );
 }

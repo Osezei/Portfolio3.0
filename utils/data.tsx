@@ -6,6 +6,9 @@ import Gym from "../public/assets/images/gym.png";
 import Portfolio from "../public/assets/images/portfolio.png";
 import TakeStudio from "../public/assets/images/photo.png";
 import Grocery from "../public/assets/images/grocery.png";
+import Photography from "../public/assets/images/photography.png";
+import Coffee from "../public/assets/images/coffee.png";
+import Adekunle from "../public/assets/images/adekunle.png";
 
 export const link = [
   {
@@ -48,30 +51,30 @@ export const profileLink = [
   },
 ];
 
-export const project = [
+export const project: any[] = [
   {
     id: 1,
-    stack: "HTML 5, CSS 3, JAVASCRIPT",
-    url: "https://takestudio.netlify.app/",
-    github: "https://github.com/Osezei/TakeStudios",
-    title: "TakeStudio",
-    image: TakeStudio,
+    stack: "NEXTJS",
+    url: "https://adekunle-opal.vercel.app/",
+    github: "https://github.com/Osezei/adekunle",
+    title: "Adekunle",
+    image: Adekunle,
   },
   {
     id: 2,
     stack: "HTML 5, CSS 3, JAVASCRIPT",
-    url: "https://prognexgym.netlify.app/",
-    github: "https://github.com/Osezei/Gym-site",
-    title: "Progenex",
-    image: Gym,
+    url: "https://photogalleryvvv.vercel.app/",
+    github: "https://github.com/Osezei/photogallery",
+    title: "Photography",
+    image: Photography,
   },
   {
     id: 3,
     stack: "REACTJS, CSS 3",
-    url: "https://quotess-five.vercel.app/",
-    github: "https://github.com/Osezei/Quotess",
-    title: "Quotes",
-    image: Add,
+    url: "https://coffee-fawn-kappa.vercel.app/",
+    github: "https://github.com/Osezei/coffee",
+    title: "Coffee",
+    image: Coffee,
   },
   {
     id: 4,
@@ -111,6 +114,14 @@ export const project = [
     url: "https://space-next-sigma.vercel.app/",
     github: "https://github.com/Osezei/SpaceNext",
     title: "Space",
+    image: Space,
+  },
+  {
+    id: 9,
+    stack: "NEXTJS, TAILWIND",
+    url: "https://adekunle-opal.vercel.app/",
+    github: "https://github.com/Osezei/adekunle",
+    title: "Adekunle",
     image: Space,
   },
 ];

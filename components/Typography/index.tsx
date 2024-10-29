@@ -7,10 +7,10 @@ const VARIANT_Styles: Record<Type, string> = {
   h1: "text-[36px]",
   h2: "text-[36px] md:text-[64px]",
   h3: "text-2xl md:text-3xl",
-  h4: "text-xl md:text-2xl",
+  h4: "text-5xl md:text-2xl",
   h5: "text-lg md:text-xl",
   h6: "text-lg",
-  p: "text-sm md:text-[24px]",
+  p: "text-sm md:text-[20px]",
 };
 const inter = Inter({ subsets: ["latin"] });
 type Weight =

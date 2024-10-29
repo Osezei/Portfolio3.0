@@ -21,60 +21,26 @@ body {
   background-color: rgba(128, 128, 128, 0.282);
   transition: transform 0.3s ease-in-out;
 }
-
-/* .link:hover {
-  color: rgba(128, 128, 128, 0.282);
-  animation-duration: color 0.3s;
-} */
+.text-whit {
+  color: rgba(128, 128, 128);
+}
 
 /* navigation */
-.button {
-  position: fixed;
-  top: 0;
-  right: 0px;
-  margin: 20px;
-  z-index: 2;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: black;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.nav-links {
+  position: relative;
 }
-
-.burger {
+.nav-links::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+.nav-links:hover:after {
   width: 100%;
-  &::after,
-  &::before {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 40%;
-    margin: auto;
-    background-color: white;
-    position: relative;
-  }
-
-  &::after {
-    top: -5px;
-  }
-
-  &::before {
-    top: 5px;
-  }
 }
 
-.burgerActive {
-  &::after {
-    transform: rotate(45deg);
-    top: -1px;
-  }
-
-  &::before {
-    transform: rotate(-45deg);
-    top: 0px;
-  }
-}
 /* end of navigation */
