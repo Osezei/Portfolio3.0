@@ -25,9 +25,8 @@ export const navItems = [
   },
 ];
 
-const Nav = ({ isActive, setIsActive }: any) => {
-  // const pathname = usePathname();
-  // const [selectedIndicator, setSelectedIndicator] = useState(pathname);
+const Nav = ({ setIsActive }: any) => {
+  const pathname = usePathname();
 
   return (
     <motion.div
@@ -37,22 +36,13 @@ const Nav = ({ isActive, setIsActive }: any) => {
       exit="exit"
     >
       <div>
-        <div
-          // onMouseLeave={() => {
-          //   setSelectedIndicator(pathname);
-          // }}
-          className="flex flex-col bg-black h-screen text-red-50 items-center justify-center gap-5 md:gap-10"
-        >
+        <div className="flex flex-col bg-black h-screen text-red-50 items-center justify-center gap-5 md:gap-10">
           {navItems.map((data, index) => {
             return (
               <LinkIndex
                 key={index}
                 data={{ ...data, index }}
-                onClick={() => {
-                  setIsActive(!isActive);
-                }}
-                // isActive={selectedIndicator == data.href}
-                // setSelectedIndicator={setSelectedIndicator}
+                setIsActive={setIsActive}
               />
             );
           })}
@@ -62,11 +52,3 @@ const Nav = ({ isActive, setIsActive }: any) => {
   );
 };
 export default Nav;
-//   <Typo
-//     as="p"
-//     weight="font-semibold"
-//     transform="uppercase"
-//     className="text-rgba(128, 128, 128, 0.282)"
-//   >
-//     {data.title}
-//   </Typo>;

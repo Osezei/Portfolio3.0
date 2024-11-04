@@ -1,4 +1,3 @@
-import styles from "./style.module.scss";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { scale, slide } from "../Animation/Anim";
@@ -7,7 +6,8 @@ export default function LinkIndex({
   data,
   isActive,
   setIsActive,
-}: //setSelectedIndicator,
+}: //setIsActive,
+//setSelectedIndicator,
 any) {
   const { title, href, index } = data;
 
@@ -30,9 +30,9 @@ any) {
         to={href}
         smooth={true}
         duration={500}
-        // onClick={() => {
-        //   setIsActive(!isActive);
-        // }}
+        onClick={() => {
+          setIsActive(false);
+        }}
       >
         {title}
       </Link>

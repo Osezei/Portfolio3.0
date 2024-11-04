@@ -4,13 +4,35 @@ import Container from "../Container";
 import { AnimatePresence } from "framer-motion";
 import Nav from "./Nav";
 import Typo from "../Typography";
-import { navItems } from "./Nav";
 import { Link } from "react-scroll";
+import { menuSlide } from "../Animation/Anim";
+import { motion } from "framer-motion";
+import LinkIndex from "../Link";
+import { FaArrowUp } from "react-icons/fa";
+
+export const navItems = [
+  {
+    title: "Home",
+    href: "#home",
+  },
+  {
+    title: "Work",
+    href: "#work",
+  },
+  {
+    title: "About",
+    href: "#about",
+  },
+  {
+    title: "Contact",
+    href: "#contact",
+  },
+];
 
 const Navigation = () => {
   const [isActive, setIsActive] = useState(false);
   const [visible, setVisible] = useState(false);
-  const scrollHeight = 3; // Change this value to set the scroll height
+  const scrollHeight = 100; // Change this value to set the scroll height
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,6 +98,7 @@ const Navigation = () => {
               className="text-sm font-bold"
               onClick={() => {
                 setIsActive(!isActive);
+                // console.log(isActive);
               }}
             >
               Menu.
@@ -84,16 +107,22 @@ const Navigation = () => {
           {/* end of mobile view */}
         </nav>
       </Container>
+
       <div>
-        {/* {visible && (
-          <button className="text-red-800" onClick={scrollToTop}>
-            Scroll to Top
+        {/* scroll button */}
+        {visible && (
+          <button
+            className="text-white z-50 bg-black p-2 text-2xl lg:text-3xl fixed bottom-[20px] right-[20px] lg:bottom-[40px] lg:right-[40px]"
+            onClick={scrollToTop}
+          >
+            <FaArrowUp />
           </button>
-        )} */}
+        )}
+        {/* end of scroll button */}
         {/* mobile menu */}
         <AnimatePresence mode="wait">
           <div className="fixed h-full top-0 left-0 w-[50%] z-30 lg:hidden">
-            {isActive && <Nav setIsActive={setIsActive} isActive={isActive} />}
+            {isActive && <Nav setIsActive={setIsActive} />}
           </div>
         </AnimatePresence>
         {/* end of mobile menu */}

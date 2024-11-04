@@ -10,26 +10,22 @@ import Photography from "../public/assets/images/photography.png";
 import Coffee from "../public/assets/images/coffee.png";
 import Adekunle from "../public/assets/images/adekunle.png";
 
-export const link = [
+export const navData: any[] = [
   {
-    id: 1,
-    url: "/",
-    title: "home",
+    title: "Home",
+    href: "#home",
   },
   {
-    id: 2,
-    url: "/about",
-    title: "about",
+    title: "Work",
+    href: "#work",
   },
   {
-    id: 3,
-    url: "/project",
-    title: "project",
+    title: "About",
+    href: "#about",
   },
   {
-    id: 4,
-    url: "/contact",
-    title: "contact",
+    title: "Contact",
+    href: "#contact",
   },
 ];
 
