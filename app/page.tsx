@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
-      <div className="">
-        <About />
-      </div>
+
+      <About />
+
       <Works />
     </Layout>
   );

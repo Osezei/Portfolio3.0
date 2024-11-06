@@ -16,11 +16,11 @@ const Hero = () => {
           <div className="">
             <p className="mt-3 font-normal text-[14px] lg:text-[20px] w-full md:w-[50%]">
               I create interactive and responsive web applications using modern
-              technologies.
+              technologies at <span className="font-semibold">BMC</span>.
             </p>
             <div className="mt-2 lg:mt-5">
               <Link to="#work" smooth={true} offset={50} duration={500}>
-                <Button>Say Hello</Button>
+                <Button>See Projects</Button>
               </Link>
             </div>
           </div>

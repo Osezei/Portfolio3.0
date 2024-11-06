@@ -9,7 +9,9 @@ const Layout = ({ children }: any) => {
     <div className="h-screen flex flex-col">
       <Navigation />
       <main className="flex-1">{children}</main>
-      <Footer />
+      <div className="bg-black">
+        <Footer />
+      </div>
     </div>
   );
 };

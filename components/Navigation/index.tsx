@@ -69,7 +69,7 @@ const Navigation = () => {
           </Typo>
 
           {/* laptop menu */}
-          <div className="hidden lg:flex gap-5">
+          <div className="hidden lg:flex gap-5 ">
             {navItems.map(({ href, title }) => {
               return (
                 <Link
@@ -83,7 +83,7 @@ const Navigation = () => {
                     transform="none"
                     as="p"
                     weight="font-normal"
-                    className="text-black nav-links"
+                    className="text-black nav-links cursor-pointer"
                   >
                     {title}
                   </Typo>

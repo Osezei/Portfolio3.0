@@ -112,8 +112,8 @@ const Works = () => {
           ))}
         </div>
         <div className="my-10 flex justify-start md:justify-center">
-          <a href="https://github.com/Osezei" target="_blank">
-            <Button>See more</Button>
+          <a href="mailto:john.osezei@yahoo.com" target="_blank">
+            <Button>Get In Touch</Button>
           </a>
         </div>
       </section>
