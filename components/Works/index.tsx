@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProjectLinks from "../ProjectLinks";
 import { project } from "@/utils/data";
 import Image from "next/image";
@@ -6,11 +6,33 @@ import Container from "../Container";
 import PictureContainer from "../PictureContainer";
 import HeadingTopic from "../HeadingTopic";
 import Button from "../Button";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Works = () => {
+  useEffect(() => {
+    const animationStart = window.innerWidth > 1000 ? "50%" : "10%";
+    const delay =
+      (window.innerHeight > 530 && window.innerWidth < 1000) ||
+      (window.innerHeight > 1000 && window.innerWidth > 1500)
+        ? 1.5
+        : 0;
+    gsap.to(".work", {
+      scrollTrigger: {
+        trigger: ".work",
+        start: `${animationStart} bottom`,
+      },
+      ease: "power4.out",
+      duration: 6,
+      opacity: 1,
+      delay: delay,
+    });
+  }, []);
   return (
     <Container>
-      <section id="#work" className="">
+      <section id="work" className="">
         <HeadingTopic text="Projects" />
         {/* laptop screen */}
         <div className="hidden xl:flex gap-[28px] justify-center flex-col lg:flex-row lg:flex-wrap">
@@ -113,7 +135,9 @@ const Works = () => {
         </div>
         <div className="my-10 flex justify-start md:justify-center">
           <a href="mailto:john.osezei@yahoo.com" target="_blank">
-            <Button>Get In Touch</Button>
+            <button className="button capitalize">
+              <span>get in touch</span>
+            </button>
           </a>
         </div>
       </section>

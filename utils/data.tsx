@@ -10,19 +10,20 @@ import Photography from "../public/assets/images/photography.png";
 import Coffee from "../public/assets/images/coffee.png";
 import Adekunle from "../public/assets/images/adekunle.png";
 
-export const navData: any[] = [
+export const navData = [
   {
     title: "Home",
     href: "#home",
   },
   {
-    title: "Work",
-    href: "#work",
-  },
-  {
     title: "About",
     href: "#about",
   },
+  {
+    title: "Projects",
+    href: "#work",
+  },
+
   {
     title: "Contact",
     href: "#contact",

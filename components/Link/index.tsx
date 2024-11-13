@@ -1,21 +1,14 @@
-import { Link } from "react-scroll";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { scale, slide } from "../Animation/Anim";
+import { useLenis } from "@/app/context/LenisContext";
 
-export default function LinkIndex({
-  data,
-  isActive,
-  setIsActive,
-}: //setIsActive,
-//setSelectedIndicator,
-any) {
+export default function LinkIndex({ data, isActive, setMobileMenu }: any) {
   const { title, href, index } = data;
+  const lenis = useLenis();
 
   return (
     <motion.div
-      // onMouseEnter={() => {
-      //   setSelectedIndicator(href);
-      // }}
       custom={index}
       variants={slide}
       initial="initial"
@@ -27,11 +20,11 @@ any) {
         animate={!isActive ? "open" : "closed"}
       ></motion.div>
       <Link
-        to={href}
-        smooth={true}
-        duration={500}
+        href={href}
+        key={index}
         onClick={() => {
-          setIsActive(false);
+          lenis?.scrollTo(`${href}`);
+          setMobileMenu(false);
         }}
       >
         {title}

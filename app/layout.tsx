@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import { Montserrat } from "next/font/google";
+import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const monts = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Osezei's Portfolio",
@@ -16,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={monts.className}>{children}</body>
     </html>
   );
 }
